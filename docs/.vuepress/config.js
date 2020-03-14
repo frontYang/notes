@@ -28,13 +28,19 @@ module.exports = {
         ]
       },
       {
-        title: 'Interview',
+        title: '藏经阁',
         children: [
           '/interview/',
           '/interview/javascript',
           '/interview/vue',
           '/interview/others',
           '/interview/my_interview',
+        ]
+      },
+      {
+        title: '疯言疯语',
+        children: [
+          '/speech/ '
         ]
       }
     ]
