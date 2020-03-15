@@ -9,7 +9,7 @@ module.exports = {
     ],
     sidebar: [
       {
-        title: 'HOME',   // 必要的
+        title: '缘起',   // 必要的
         path: '/',      // 可选的, 应该是一个绝对路径
       },
       {
