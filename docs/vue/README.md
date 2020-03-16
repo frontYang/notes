@@ -24,9 +24,11 @@
 
 :question:： 什么是 `MVVM`？
 
-:memo:：
-
-
+:memo:：`MVVM` 由 `View`,`ViewModel`, `Model`三部分组成 [参考](https://juejin.im/post/5b2f0769e51d45589f46949e)
+<br>
+1、`View`：代表视图、模板，负责将数据模型转化为UI展现出来<br>
+2、`Model`：代表的是模型、数据，可以在`Model`层中定义数据修改和操作的业务逻辑<br>
+3、`ViewModel`：连接`Model`和`View`<br>
 
 
 
