@@ -30,5 +30,11 @@
 2、`Model`：代表的是模型、数据，可以在`Model`层中定义数据修改和操作的业务逻辑<br>
 3、`ViewModel`：连接`Model`和`View`<br>
 
+---
+
+:question:：vue组件之间怎么传值？
+
+:memo:：
+
 
 

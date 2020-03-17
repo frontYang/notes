@@ -51,12 +51,74 @@ mySearch('aaa', 'ccc') // false
 ```
 
 
-## 可索引接口
+## 可索引接口(不常用)
+```ts
+// 当用 number去索引StringArray时会得到string类型的返回值。
 
+interface StringArray {
+  [index: number]: string
+}
 
+let myArray: StringArray = ["Bob", "Fred"]
+
+let myStr: string = myArray[0]
+
+```
 
 ## 类类型接口
+```ts
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date);
+}
 
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(h: number, m: number) { }
+}
+
+```
 
 
 ## 扩展&继承
+和类一样，接口也可以相互继承。 这让我们能够从一个接口里复制成员到另一个接口里，可以更灵活地将接口分割到可重用的模块里。
+```ts
+interface Shape {
+    color: string;
+}
+
+interface Square extends Shape {
+    sideLength: number;
+}
+
+let square = <Square>{};
+square.color = "blue";
+square.sideLength = 10;
+```
+
+
+一个接口可以继承多个接口，创建出多个接口的合成接口。
+```ts
+interface Shape {
+  color: string;
+}
+
+interface PenStroke {
+  penWidth: number;
+}
+
+interface Square extends Shape, PenStroke {
+  sideLength: number;
+}
+
+let square = <Square>{};
+square.color = "blue";
+square.sideLength = 10;
+square.penWidth = 5.0;
+```
+
+
+> 可索引接口，类类型接口、混合类型、接口继承类 不是太明白，以后再返回来学习这一部分，先做个标记:new_moon_with_face:
