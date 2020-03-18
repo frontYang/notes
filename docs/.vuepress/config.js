@@ -28,6 +28,23 @@ module.exports = {
         ]
       },
       {
+        title: 'js设计模式',
+        children: [
+          '/design_mod/this_call_apply',
+          '/design_mod/singleton',
+          '/design_mod/adapter',
+          '/design_mod/state',
+          '/design_mod/strategy',
+          '/design_mod/singleton',
+        ]
+      },
+      {
+        title: '第三方sdk',
+        children: [
+          '/third_sdk/facebook_login_share'
+        ]
+      },
+      {
         title: '藏经阁',
         children: [
           '/interview/',

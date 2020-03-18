@@ -34,7 +34,6 @@
 
 :question:：vue组件之间怎么传值？
 
-:memo:：
-
+:memo:：[参考资料](https://juejin.im/post/5d267dcdf265da1b957081a3)
 
 
