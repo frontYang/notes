@@ -45,7 +45,7 @@ module.exports = {
         ]
       },
       {
-        title: '藏经阁',
+        title: '取经阁',
         children: [
           '/interview/',
           '/interview/javascript',
