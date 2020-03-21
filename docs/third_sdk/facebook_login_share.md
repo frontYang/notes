@@ -127,7 +127,7 @@ facebook后台生成
   window.FBUtil = FBUtil
 })();
 
-var initShare = (){
+var initShare = function(){
 	var btnShare = document.querySelector('.share-facebook')
 	FBUtil.init({
 		appid: 'APP ID',
@@ -143,7 +143,7 @@ var initShare = (){
 			// 分享成功回调
 		})
 	})
-}
+}()
 </script>
 ```
 

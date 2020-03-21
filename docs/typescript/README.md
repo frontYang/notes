@@ -1,5 +1,9 @@
 # 介绍&安装&编译
 
+
+![typescript](../assets/images/typescript.png)
+
+
 ## 介绍
 - TypeScript 是由微软开发的一款开源的语言
 
