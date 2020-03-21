@@ -26,7 +26,7 @@
 
 - 最基础的编译命令行是 `tsc hello.ts`
 
-通用的编译方式是在根文件建立 `tsconfig.json` 文件
+- 通用的编译方式是在根文件建立 `tsconfig.json` 文件
 
 
 
