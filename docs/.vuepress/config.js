@@ -4,13 +4,13 @@ module.exports = {
 
   themeConfig: {
     lastUpdated: '上次更新时间',
-    nav: [
-      { text: 'HOME', link: '/' }
-    ],
-    sidebar: [
-      {
-        title: '缘起',   // 必要的
-        path: '/',      // 可选的, 应该是一个绝对路径
+    nav: [{
+      text: '缘起',
+      link: '/'
+    }],
+    sidebar: [{
+        title: '缘起', // 必要的
+        path: '/', // 可选的, 应该是一个绝对路径
       },
       {
         title: 'Typescript',
@@ -45,11 +45,21 @@ module.exports = {
         ]
       },
       {
+        title: '开发工具',
+        children: [
+          '/tool/vscode_pretter',
+        ]
+      },
+      {
         title: '取经阁',
         children: [
           '/interview/',
+          '/interview/html',
+          '/interview/css',
           '/interview/javascript',
           '/interview/vue',
+          '/interview/network',
+          '/interview/webpack',
           '/interview/others',
           '/interview/my_interview',
         ]
