@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>状态模式 | YNOTE</title>
+    <meta name="description" content="Front-end personal notes">
+    <meta name="generator" content="VuePress 1.3.0">
+    
+    
+    <link rel="preload" href="/notes/assets/css/0.styles.f8c00f62.css" as="style"><link rel="preload" href="/notes/assets/js/app.bfee01c1.js" as="script"><link rel="preload" href="/notes/assets/js/2.e2ca1c48.js" as="script"><link rel="preload" href="/notes/assets/js/10.6d5cab6c.js" as="script"><link rel="prefetch" href="/notes/assets/js/11.dcdbf6a2.js"><link rel="prefetch" href="/notes/assets/js/12.c27cf5e2.js"><link rel="prefetch" href="/notes/assets/js/13.0fe567c4.js"><link rel="prefetch" href="/notes/assets/js/14.b70bdcf3.js"><link rel="prefetch" href="/notes/assets/js/15.fa6670ad.js"><link rel="prefetch" href="/notes/assets/js/16.e0701730.js"><link rel="prefetch" href="/notes/assets/js/17.4fc8656b.js"><link rel="prefetch" href="/notes/assets/js/18.9ec34cd2.js"><link rel="prefetch" href="/notes/assets/js/19.4df82d0f.js"><link rel="prefetch" href="/notes/assets/js/20.03aab009.js"><link rel="prefetch" href="/notes/assets/js/21.26bccac1.js"><link rel="prefetch" href="/notes/assets/js/22.7b14c237.js"><link rel="prefetch" href="/notes/assets/js/23.8eee17c6.js"><link rel="prefetch" href="/notes/assets/js/24.5b6932a2.js"><link rel="prefetch" href="/notes/assets/js/25.0003755f.js"><link rel="prefetch" href="/notes/assets/js/26.26c32915.js"><link rel="prefetch" href="/notes/assets/js/27.4e4c3577.js"><link rel="prefetch" href="/notes/assets/js/28.060ca088.js"><link rel="prefetch" href="/notes/assets/js/29.84816104.js"><link rel="prefetch" href="/notes/assets/js/3.81afed76.js"><link rel="prefetch" href="/notes/assets/js/30.884fa379.js"><link rel="prefetch" href="/notes/assets/js/31.a8dadeed.js"><link rel="prefetch" href="/notes/assets/js/32.b8f43414.js"><link rel="prefetch" href="/notes/assets/js/33.113c601f.js"><link rel="prefetch" href="/notes/assets/js/34.af6137d8.js"><link rel="prefetch" href="/notes/assets/js/35.a531d067.js"><link rel="prefetch" href="/notes/assets/js/36.583de181.js"><link rel="prefetch" href="/notes/assets/js/37.592987f4.js"><link rel="prefetch" href="/notes/assets/js/38.f5342543.js"><link rel="prefetch" href="/notes/assets/js/39.e67aeaaa.js"><link rel="prefetch" href="/notes/assets/js/4.2a10743f.js"><link rel="prefetch" href="/notes/assets/js/5.f2868031.js"><link rel="prefetch" href="/notes/assets/js/6.79338a5b.js"><link rel="prefetch" href="/notes/assets/js/7.4b7b34b5.js"><link rel="prefetch" href="/notes/assets/js/8.77b730b0.js"><link rel="prefetch" href="/notes/assets/js/9.140fd731.js">
+    <link rel="stylesheet" href="/notes/assets/css/0.styles.f8c00f62.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/notes/" class="home-link router-link-active"><!----> <span class="site-name">YNOTE</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/notes/" class="nav-link">
+  缘起
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/notes/" class="nav-link">
+  缘起
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/notes/" class="sidebar-link">缘起</a></li><li><a href="/notes/guide.html" class="sidebar-link">目录</a></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Typescript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>js设计模式</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/notes/design_mod/" class="sidebar-link">目录</a></li><li><a href="/notes/design_mod/this_call_apply.html" class="sidebar-link">call 和 apply</a></li><li><a href="/notes/design_mod/singleton.html" class="sidebar-link">单例模式</a></li><li><a href="/notes/design_mod/adapter.html" class="sidebar-link">适配器模式</a></li><li><a href="/notes/design_mod/state.html" class="active sidebar-link">状态模式</a></li><li><a href="/notes/design_mod/strategy.html" class="sidebar-link">策略模式</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>第三方sdk</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>开发工具</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>取经阁</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>疯言疯语</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="状态模式"><a href="#状态模式" class="header-anchor">#</a> 状态模式</h1> <p>同一个事物，在不同状态下，表现出来的行为不一样</p> <p>把事物的每种状态都封装成单独的类，跟此种状态有关的行为都被封装在这个类的内部</p> <p>允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类</p> <p>没有怎么看明白，下次再看一篇</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 利用状态模式改进</span>
+<span class="token keyword">var</span> <span class="token function-variable function">OffLightState</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">light</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>light <span class="token operator">=</span> light
+<span class="token punctuation">}</span>
+
+<span class="token class-name">OffLightState</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">buttonWasPressed</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'弱光'</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>light<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>light<span class="token punctuation">.</span>weekLightState<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">var</span> <span class="token function-variable function">WeekLightState</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">light</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>light <span class="token operator">=</span> light
+<span class="token punctuation">}</span>
+
+<span class="token class-name">WeekLightState</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">buttonWasPressed</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'强光'</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>light<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>light<span class="token punctuation">.</span>strongLightState<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">var</span> <span class="token function-variable function">StrongLightState</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">light</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>light <span class="token operator">=</span> light
+<span class="token punctuation">}</span>
+
+<span class="token class-name">StrongLightState</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">buttonWasPressed</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'关灯'</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>light<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>light<span class="token punctuation">.</span>offLightState<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> <span class="token function-variable function">Light</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>offLightState <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OffLightState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>weekLightState <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WeekLightState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>strongLightState <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StrongLightState</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>button <span class="token operator">=</span> <span class="token keyword">null</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Light</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">init</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">var</span> button <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+  <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span>
+
+  button<span class="token punctuation">.</span>innerHTML <span class="token operator">=</span> <span class="token string">'开关'</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>button <span class="token operator">=</span> document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>button<span class="token punctuation">)</span>
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>currState <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>offLightState
+
+  <span class="token keyword">this</span><span class="token punctuation">.</span>button<span class="token punctuation">.</span><span class="token function-variable function">onclick</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    self<span class="token punctuation">.</span>currState<span class="token punctuation">.</span><span class="token function">buttonWasPressed</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token class-name">Light</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">setState</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">newState</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>currState <span class="token operator">=</span> newState
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> light <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Light</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+light<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新时间:</span> <span class="time">3/18/2020, 11:27:27 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/notes/design_mod/adapter.html" class="prev">
+        适配器模式
+      </a></span> <span class="next"><a href="/notes/design_mod/strategy.html">
+        策略模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/notes/assets/js/app.bfee01c1.js" defer></script><script src="/notes/assets/js/2.e2ca1c48.js" defer></script><script src="/notes/assets/js/10.6d5cab6c.js" defer></script>
+  </body>
+</html>

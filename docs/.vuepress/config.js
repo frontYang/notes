@@ -1,7 +1,7 @@
 module.exports = {
   title: 'YNOTE',
   description: 'Front-end personal notes',
-
+  base: '/notes/',
   themeConfig: {
     lastUpdated: '上次更新时间',
     nav: [
