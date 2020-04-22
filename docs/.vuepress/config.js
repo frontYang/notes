@@ -70,7 +70,7 @@ module.exports = {
       },
       {
         title: '疯言疯语',
-        children: ['/speech/ '],
+        children: ['/speech/'],
       },
     ],
   },
