@@ -1,5 +1,5 @@
-/docs/.vuewpress/theme/
-/docs/.vuewpress/dist/
+/docs/.vuepress/theme/
+/docs/.vuepress/dist/
 /node_modules
 yarn-error.log
 yarn.lock
