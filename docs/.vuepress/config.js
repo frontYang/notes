@@ -52,7 +52,7 @@ module.exports = {
       },
       {
         title: '开发工具',
-        children: ['/tool/vscode_pretter'],
+        children: ['/tool/vscode_pretter', '/tool/vuepress_github'],
       },
       {
         title: '取经阁',
