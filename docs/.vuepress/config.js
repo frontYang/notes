@@ -48,7 +48,7 @@ module.exports = {
       },
       {
         title: '第三方sdk',
-        children: ['/third_sdk/facebook_login_share'],
+        children: ['/third_sdk/facebook_login_share', '/third_sdk/fire_key_event'],
       },
       {
         title: '开发工具',
