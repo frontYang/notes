@@ -100,9 +100,22 @@ flush privileges;
 
 ```
 
+
+
 10、注释ini中的跳过密码
 
 11、重启mysql，链接测试，如果链接成功则ok了
+
+```
+net stop mysql
+net start mysql
+```
+
+
+
+
+
+
 
 
 
