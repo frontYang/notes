@@ -1,5 +1,7 @@
 # Docker 学习笔记
 
+[通过视频学习所记](https://www.bilibili.com/video/BV1og4y1q7M4)
+
 ## 介绍
 
 [官网文档](https://docs.docker.com/)
