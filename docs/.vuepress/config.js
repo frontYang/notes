@@ -55,6 +55,10 @@ module.exports = {
         children: ['/tool/vscode_pretter', '/tool/vuepress_github'],
       },
       {
+        title: '数据库',
+        children: ['/database/', '/database/mysql/'],
+      },
+      {
         title: '取经阁',
         children: [
           '/interview/',

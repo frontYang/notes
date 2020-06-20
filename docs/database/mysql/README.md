@@ -643,6 +643,25 @@ TRUNCATE `student`
 
 
 
+> select 语法
+
+```sql
+SELECT [ALL | DISTINCT]
+{*|table.* | [table.filed1[as alias1][,table.filed2[as alias2][,...]]]}
+FROM table_name [as table_alias]
+	[left | right | inner join table_name2] -- 联合查询
+	[WHERE ...] -- 指定结果需要满足的条件
+	[GROUP BY ...] --- 指定结果按照哪几个字段来分组
+	[HAVING] -- 过滤分组的记录必须满足的次要条件
+	[ORDER BY ...] -- 指定查询记录按一个或多个条件排序
+	[LIMIT {[offset,]row_count | row_countOFFSET offset}];
+	-- 指定查询的记录从哪条至哪条
+```
+
+
+
+
+
 ### 指定查询字段
 
 ```sql
@@ -802,7 +821,7 @@ WHERE `borndate` IS NULL
 
 
 
-<img src="D:\Document\Front\vuepress\docs\assets\images\sql\join.png" style="zoom: 80%;" />
+<img src="../../assets/images/sql/join.png" style="zoom: 80%;" />
 
 
 
@@ -860,5 +879,275 @@ WHERE `studentresult` IS NULL
 
 
 
-> 自连接
+> 自连接（了解）
 
+ ==自己的表和自己的表连接，核心：一张表拆为两张一样的表即可== 
+
+父类
+
+| categoryid | categoryName |
+| ---------- | ------------ |
+| 2          | 信息技术     |
+| 3          | 软件开发     |
+| 5          | 美术设计     |
+
+子类
+
+|      | categoryid | categoryName |
+| ---- | ---------- | ------------ |
+| 3    | 4          | 数据库       |
+| 2    | 5          | 办公信息     |
+| 3    | 6          | web开发      |
+| 5    | 7          | ps技术       |
+
+操作：查询父类对应的子类关系
+
+| 父类     | 子类            |
+| -------- | --------------- |
+| 信息技术 | 办公信息        |
+| 软件开发 | 数据库、web开发 |
+| 美术设计 | ps技术          |
+
+```sql
+-- ==============自连接===========
+-- 建表
+CREATE TABLE `category` (
+  `categoryid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主题id',
+  `pid` INT(10) NOT NULL COMMENT '父id',
+  `categoryName` VARCHAR(50) NOT NULL COMMENT '主题名字',
+  PRIMARY KEY (`categoryid`)  
+) ENGINE=INNODB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8
+
+-- 插入数据
+INSERT INTO `category` (`categoryid`, `pid`, `categoryName`)
+VALUES('2','1','信息技术'),
+('3','1','软件开发'),
+('4','3','数据库'),
+('5','1','美术设计'),
+('6','3','web开发'),
+('7','5','ps技术'),
+('8','2','办公信息');
+
+
+-- 查询父子信息，将一张表看成两张一毛一样的表
+SELECT a.`categoryName` AS '父栏目', b.`categoryName` AS '子栏目'
+FROM `category` AS a, `category` AS b
+WHERE a.`categoryid` = b.`categoryid`
+```
+
+
+
+### 分页和排序
+
+> 排序
+
+```sql
+-- 分页 limit 和排序 order by
+
+-- 排序：升序 ASC， 降序 DESC
+-- order by 通过哪个字段排序，怎么排
+
+SELECT s.`StudentNo`, `StudentName`, `SubjectName`, `StudentResult`
+FROM student s
+INNER JOIN `result` r
+ON s.`StudentNo` = r.`StudentNo`
+INSERT JOIN `subject` sub
+ON r.`SubjectNo` = sub.`SubjectNo`
+WHERE SubjectName = '数据库结构-1'
+ORDER BY StudentResult ASC
+
+```
+
+> 分页
+
+```sql
+
+-- 分页
+-- 语法： limit 起始值，页面的大小
+-- LIMIT 0,5     1~5
+-- LIMIT 1,5     2~6
+-- (n-1) * pageSize , pageSize
+-- (当前页 - 1) * 页面大小
+-- 总页数：数据总数 / 页面大小 = 总页数 （向上取整）
+SELECT s.`StudentNo`, `StudentName`, `SubjectName`, `StudentResult`
+FROM student s
+INNER JOIN `result` r
+ON s.`StudentNo` = r.`StudentNo`
+INSERT JOIN `subject` sub
+ON r.`SubjectNo` = sub.`SubjectNo`
+WHERE SubjectName = '数据库结构-1'
+ORDER BY StudentResult ASC
+LIMIT 0,5 
+```
+
+==语法：limit(查询起止下标，pageSize)==
+
+### 子查询
+
+本质：==在where语句中嵌套一个子查询语句==
+
+```sql
+-- 查询数据库结构-1的所有考试结果（学号，科目，成绩）
+SELECT `studentno`,`subjectno`,`studentresult`
+FROM `result` 
+WHERE `studentno` = (
+  -- 查询数据库结构-1的所有学生学号
+  SELECT `subjectno` FROM `subject` 
+  WHERE `subjectname`
+)
+ORDER BY `studentresult` DESC
+```
+
+
+
+### 分组和过滤
+
+```sql
+-- 查询不同课程的平均分，最高分，最低分，平均分大于80
+-- 核心（根据不同的课程分组）
+SELECT `subjectname`, AVG(`studentresult`) AS 平均分,MAX(`studentresult`),MIN(`studentresult`)
+FROM result AS r
+INSERT JOIN `subject` AS sub
+ON r.`subjectno` = sub.`subjectno`
+GROUP BY r.`subjectno` -- 通过指定字段分组
+HAVING 平均分 > 80
+
+```
+
+
+
+
+
+## MySql函数
+
+[官网](https://dev.mysql.com/doc/refman/8.0/en/func-op-summary-ref.html)
+
+### 基本函数
+
+```sql
+-- =======基础函数=======
+
+-- 数学运算
+SELECT ABS(-8) -- 绝对值  8
+SELECT CEILING(9.4) -- 向上取整  10
+SELECT FLOOR(9.4) -- 向下取整  9
+SELECT RAND() -- 返回一个0~1之间的随机数
+SELECT SIGN(-10) -- 判断一个数的符号 负数返回-1，整数返回1,0返回0
+
+-- 字符串函数
+SELECT CHAR_LENGTH('哈哈哈哈哈哈哈哈哈') -- 字符串长度
+SELECT CONCAT('ha', 'h', 'h') -- 拼接字符串
+SELECT INSERT('hello', 1, 2, '哈哈') -- 插入，替换 哈哈llo
+SELECT UPPER('hhhhhh') -- 转大写
+SELECT LOWER('HHHHHH') -- 转小写
+SELECT INSTR('hhhhhhahh', 'a') -- 返回第一次出现的字符串的索引 7 
+SELECT REPLACE('hhahhhbh', 'a', 'c') -- 替换出现的指定字符串 hhchhhbh
+SELECT SUBSTR('abcdefg', 2, 3) -- 返回指定的字符串  bcd (截取的位置，截取的长度)
+SELECT REVERSE('123456') -- 反转 654321
+
+-- 查询姓周的同学，将周改成邹
+SELECT REPLACE(`studentname`, '周', '邹') FROM `student`
+WHERE `studentname` LIKE '周%'
+
+-- 时间和日期函数 （记住）
+SELECT CURRENT_DATE() -- 获取当前日期 2020-06-20
+SELECT CURDATE() -- 获取当前日期 2020-06-20
+SELECT NOW() -- 获取当前的时间 2020-06-20 11:34:31
+SELECT LOCALTIME() -- 本地时间 2020-06-20 11:35:17
+SELECT SYSDATE() -- 系统时间 2020-06-20 11:35:29
+SELECT YEAR(NOW()) -- 年 
+SELECT MONTH(NOW()) -- 月 
+SELECT DAY(NOW()) -- 日 
+SELECT HOUR(NOW()) -- 时 
+SELECT MINUTE(NOW()) -- 分 
+SELECT SECOND(NOW()) -- 秒
+
+-- 系统
+SELECT SYSTEM_USER() -- root@localhost
+SELECT USER() -- 同上
+SELECT VERSION() -- 版本 8.0.20
+```
+
+
+
+### 聚合函数（常用）
+
+| 函数名称 | 描述   |
+| -------- | ------ |
+| COUNT()  | 计数   |
+| SUM()    | 求和   |
+| AVG()    | 平均值 |
+| MIN()    | 最大值 |
+| MAX()    | 最小值 |
+
+```sql
+-- ==========聚合函数=========
+
+-- 一下三种都能狗统计表中的数据 (想查询一个表中有多少个记录，就使用count())
+SELECT COUNT(studentname) FROM student -- COUNT(字段) 会忽略所有的null值
+SELECT COUNT(*) FROM student -- COUNT(*) 不忽略null值  
+SELECT COUNT(1) FROM student -- COUNT(1) 不忽略null值  
+
+SELECT SUM(`studentresult`) AS '总和' FROM result
+SELECT AVG(`studentresult`) AS '平均分' FROM result
+SELECT MAX(`studentresult`) AS '最高分' FROM result
+SELECT MIN(`studentresult`) AS '最低分' FROM result
+
+```
+
+
+
+### 数据库级别的MD5加密（扩展）
+
+什么是md5？
+
+主要增强算法复杂度和==不可逆性==
+
+md5破解网站的原理，背后有一个字典存放MD5加密后的值 和加密前的值
+
+```sql
+-- =====测试md5加密====
+CREATE TABLE `testmd5` (
+  `id` INT(4) NOT NULL,
+  `name` VARCHAR(40) NOT NULL,
+  `pwd` VARCHAR(50) NOT NULL,
+  PRIMARY KEY(`id`)
+)ENGINE=INNODB DEFAULT CHARSET=utf8
+
+-- 明文
+INSERT INTO `testmd5` VALUES
+(1, '张三', '123456'),
+(2, '李四', '123456')
+
+-- 加密
+UPDATE testmd5 SET pwd=MD5(pwd) WHERE id = 1
+
+UPDATE testmd5 SET pwd=MD5(pwd) -- 加密全部密码
+
+-- 插入的时候加密
+INSERT INTO `testmd5` VALUES
+(4, '王五', MD5('123456'))
+
+-- 如何校验：将用户传递进来的密码进行md5加密，然后比对加密后的值
+SELECT *  FROM `testmd5` WHERE `name`='王五' AND `pwd`=MD5('123456')
+```
+
+
+
+## 事务
+
+### 什么是事务
+
+==要么都成功，要么都失败==
+
+——————
+
+1、SQL执行 A 给 B 转账  A:1000,  b:200   转200
+
+2、SQL执行 B 收到 A 的钱 A: 800, b:400
+
+——————
+
+将一组SQL放在一个批次中去执行
+
+> 事务原则：ACID原则     原子性，一致性，隔离性，持久性 （脏读，幻读）
