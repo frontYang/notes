@@ -8,6 +8,8 @@
 
 [开发工具](/tool/)
 
+[数据库](/database/)
+
 [取经阁](/interview/)
 
 [疯言疯语](/speech/)
