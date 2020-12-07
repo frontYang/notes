@@ -1,6 +1,5 @@
 # Vue
 
-
 :question:：`vue.js`是什么？
 
 :memo:：`vue.js`是一款渐进式`javascript`框架
@@ -35,5 +34,3 @@
 :question:：vue组件之间怎么传值？
 
 :memo:：[参考资料](https://juejin.im/post/5d267dcdf265da1b957081a3)
-
-
