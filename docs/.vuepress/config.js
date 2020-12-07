@@ -10,6 +10,7 @@ module.exports = {
         link: '/',
       },
     ],
+    sidebarDepth: 3,
     sidebar: [
       {
         title: '缘起', // 必要的
@@ -20,10 +21,24 @@ module.exports = {
         path: '/guide', // 可选的, 应该是一个绝对路径
       },
       {
-        title: '前端框架',        
+        title: 'vue',        
         children: [
-          '/frontend_frame/vue/vue3/',
-          '/frontend_frame/react/'
+          '/vue/',
+          '/vue/vuex',
+        ]
+      },
+      {
+        title: 'vue3',        
+        children: [
+          '/vue3/',
+          '/vue3/base',
+        ]
+      },
+      {
+        title: 'react',        
+        children: [
+          '/react/',
+          '/react/base',
         ]
       },
       {
