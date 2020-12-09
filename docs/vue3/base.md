@@ -33,11 +33,25 @@ npm run dev
 更好的逻辑复用与代码组织
 更好的类型推导
 
-  - setup
-  - reactive
-  - ref
+- setup
+- reactive
+只能创建复杂数据类型的响应式状态
+
+- ref
+创建基础数据类型和复杂数据类型的响应式状态
+ref这种写法简单，但也有弊端，只能监听一些如数字、字符串、布尔之类的简单数据
+
+- ref vs reactive
+当ref创建的是复杂数据类型的时候内部其实也是用reactive创建的。所以ref也是可以创建复杂数据类型的响应状态的，只是在setup中写法会有所不同。
+
+使用单独的变量还是使用对象封装
+
+是为了适应不同的写法的人群
+ref只可以监听简单数据，reactive可以监听所有数据
+使用方式不一样
 
 ### Fragment
+
 组件不再需要一个跟节点
 
 ### Teleport
@@ -45,9 +59,11 @@ npm run dev
 可以渲染vue组件到指定的dom节点，做弹窗比较有用
 
 ### Suspense
+
 异步组件
 
 ## 非兼容变更
+
 - createApp
 - nextTick
 - template v-for
@@ -57,10 +73,10 @@ npm run dev
 - 移除filters
 
 ## 支持的库
+
 - vue-cli4.5
 - vue router 4.0
 - vuex 4.0
 - devtool beta版本
-
 
 ## 后续进度跟进
