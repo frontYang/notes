@@ -2,7 +2,7 @@
 
 [Typescript](/typescript/)
 
-[前端框架](/frontend_frame/)
+[vue3](/vue3/)
 
 [js 设计模式](/design_mod/)
 
