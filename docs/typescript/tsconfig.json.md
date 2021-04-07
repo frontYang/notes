@@ -1,4 +1,3 @@
-
 # tsconfig.json
 
 `tsconfig.json`文件中指定了用来编译这个项目的根文件和编译选项
@@ -15,13 +14,12 @@
 
 ```json
 {
-
   /* 设置为true时可以让IDE在保存文件的时候根据tsconfig.json重新生成文件 */
   "compileOnSave": true,
 
   /* 编译器选项  */
   "compilerOptions": {
-  /* 基本选项 S */
+    /* 基本选项 S */
     // 指定 ECMAScript 目标版本: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'
     "target": "es5",
     // 指定使用模块: 'commonjs', 'amd', 'system', 'umd' or 'es2015'
@@ -52,9 +50,9 @@
     "importHelpers": true,
     // 将每个文件做为单独的模块 （与 'ts.transpileModule' 类似）.
     "isolatedModules": true,
-  /* 基本选项 E */
+    /* 基本选项 E */
 
-  /* 严格的类型检查选项 S */
+    /* 严格的类型检查选项 S */
     // 启用所有严格类型检查选项
     "strict": true,
     // 在表达式和声明上有隐含的 any类型时报错
@@ -65,9 +63,9 @@
     "noImplicitThis": true,
     // 以严格模式检查每个模块，并在每个文件里加入 'use strict'
     "alwaysStrict": true,
-  /* 严格的类型检查选项 E */
+    /* 严格的类型检查选项 E */
 
-  /* 额外的检查 S */
+    /* 额外的检查 S */
     // 有未使用的变量时，抛出错误
     "noUnusedLocals": true,
     // 有未使用的参数时，抛出错误
@@ -76,9 +74,9 @@
     "noImplicitReturns": true,
     // 报告 switch 语句的 fallthrough 错误。（即，不允许 switch 的 case 语句贯穿）
     "noFallthroughCasesInSwitch": true,
-  /* 额外的检查 E */
+    /* 额外的检查 E */
 
-  /* 模块解析选项 S */
+    /* 模块解析选项 S */
     // 选择模块解析策略： 'node' (Node.js) or 'classic' (TypeScript pre-1.6)
     "moduleResolution": "node",
     // 用于解析非相对模块名称的基目录
@@ -93,9 +91,9 @@
     "types": [],
     // 允许从没有设置默认导出的模块中默认导入。
     "allowSyntheticDefaultImports": true,
-  /* 模块解析选项 E */
+    /* 模块解析选项 E */
 
-  /* Source Map Options S */
+    /* Source Map Options S */
     // 指定调试器应该找到 TypeScript 文件而不是源文件的位置
     "sourceRoot": "./",
     // 指定调试器应该找到映射文件而不是生成文件的位置
@@ -104,34 +102,23 @@
     "inlineSourceMap": true,
     // 将代码与 sourcemaps 生成到一个文件中，要求同时设置了 --inlineSourceMap 或 --sourceMap 属性
     "inlineSources": true,
-  /* Source Map Options E */
+    /* Source Map Options E */
 
-  /* 其他选项 S */
+    /* 其他选项 S */
     // 启用装饰器
     "experimentalDecorators": true,
     // 为装饰器提供元数据的支持
     "emitDecoratorMetadata": true
-  /* 其他选项 E */
+    /* 其他选项 E */
   },
 
   /* 指定需要编译的文件(相对或绝对文件路径的列表) */
-  "files": [
-    "hello.ts"
-  ],
+  "files": ["hello.ts"],
 
   /* 指定要包含的文件 (glob匹配模式列表 )*/
-  "include": [
-      "src/**/*"
-  ],
+  "include": ["src/**/*"],
 
   /* 指定要排除的文件 (glob匹配模式列表 ) */
-  "exclude": [
-      "node_modules",
-      "**/*.spec.ts"
-  ]
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
-
 ```
-
-
-

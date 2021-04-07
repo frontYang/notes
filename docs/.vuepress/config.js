@@ -21,25 +21,16 @@ module.exports = {
         path: '/guide', // 可选的, 应该是一个绝对路径
       },
       {
-        title: 'vue',        
-        children: [
-          '/vue/',
-          '/vue/vuex',
-        ]
+        title: 'vue',
+        children: ['/vue/', '/vue/vuex'],
       },
       {
-        title: 'vue3',        
-        children: [
-          '/vue3/',
-          '/vue3/base',
-        ]
+        title: 'vue3',
+        children: ['/vue3/', '/vue3/base', '/vue3/program'],
       },
       {
-        title: 'react',        
-        children: [
-          '/react/',
-          '/react/base',
-        ]
+        title: 'react',
+        children: ['/react/', '/react/base'],
       },
       {
         title: 'Typescript',
@@ -59,14 +50,7 @@ module.exports = {
       },
       {
         title: 'js设计模式',
-        children: [
-          '/design_mod/',
-          '/design_mod/this_call_apply',
-          '/design_mod/singleton',
-          '/design_mod/adapter',
-          '/design_mod/state',
-          '/design_mod/strategy',
-        ],
+        children: ['/design_mod/', '/design_mod/this_call_apply', '/design_mod/singleton', '/design_mod/adapter', '/design_mod/state', '/design_mod/strategy'],
       },
       {
         title: '第三方sdk',
