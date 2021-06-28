@@ -1,4 +1,4 @@
-# vite2 + vue3 全家桶 + ant design vue
+# vite2+vue3 全家桶+ant design vue
 
 ## 使用 vite 创建项目
 
