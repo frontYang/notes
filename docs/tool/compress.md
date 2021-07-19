@@ -15,3 +15,5 @@ npm i super-tinypng -g
 # 在命令行进入到你想要压缩图片的目录执行
 super-tinypng
 ```
+
+[tinypng破解版客户端](https://github.com/focusbe/tinypngjs)
