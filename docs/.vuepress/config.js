@@ -2,9 +2,13 @@ module.exports = {
   title: 'YNOTE',
   description: 'Front-end personal notes',
   base: '/notes/',
+  // plugins: ['demo-container'],
+  contributors: {
+    frontmatter: 'frontYang'
+  },
   themeConfig: {
     lastUpdated: '上次更新时间',
-    nav: [
+    navbar: [
       {
         text: '缘起',
         link: '/',
@@ -13,27 +17,27 @@ module.exports = {
     sidebarDepth: 3,
     sidebar: [
       {
-        title: '缘起', // 必要的
-        path: '/', // 可选的, 应该是一个绝对路径
+        text: '缘起', // 必要的
+        link: '/', // 可选的, 应该是一个绝对路径
       },
       {
-        title: '目录', // 必要的
-        path: '/guide', // 可选的, 应该是一个绝对路径
+        text: '目录', // 必要的
+        link: '/guide', // 可选的, 应该是一个绝对路径
       },
       {
-        title: 'vue',
+        text: 'vue',
         children: ['/vue/', '/vue/vuex'],
       },
       {
-        title: 'vue3',
+        text: 'vue3',
         children: ['/vue3/', '/vue3/base', '/vue3/program'],
       },
       {
-        title: 'react',
+        text: 'react',
         children: ['/react/', '/react/base'],
       },
       {
-        title: 'Typescript',
+        text: 'Typescript',
         children: [
           '/typescript/',
           '/typescript/introduce',
@@ -49,23 +53,31 @@ module.exports = {
         ],
       },
       {
-        title: 'js设计模式',
+        text: '八股文',
+        children: ['/javascript/', '/javascript/event_loop']
+      },
+      {
+        text: 'js设计模式',
         children: ['/design_mod/', '/design_mod/this_call_apply', '/design_mod/singleton', '/design_mod/adapter', '/design_mod/state', '/design_mod/strategy'],
       },
       {
-        title: '第三方sdk',
+        text: 'nodejs',
+        children: ['/nodejs/', '/nodejs/koa2']
+      },
+      {
+        text: '第三方sdk',
         children: ['/third_sdk/facebook_login_share', '/third_sdk/fire_key_event'],
       },
       {
-        title: '开发工具',
-        children: ['/tool/vscode_pretter', '/tool/vuepress_github'],
+        text: '开发工具',
+        children: ['/tool/vscode_pretter', '/tool/vuepress_github', '/tool/compress'],
       },
       {
-        title: '数据库',
+        text: '数据库',
         children: ['/database/', '/database/mysql/'],
       },
       {
-        title: '取经阁',
+        text: '取经阁',
         children: [
           '/interview/',
           '/interview/html',
@@ -79,9 +91,10 @@ module.exports = {
         ],
       },
       {
-        title: '疯言疯语',
-        children: ['/speech/'],
+        text: '疯言疯语',
+        children: ['/speech/', '/speech/20210706'],
       },
     ],
   },
+  
 }

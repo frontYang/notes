@@ -191,6 +191,6 @@ app.on('error', function(err) {
 })
 ```
 
-## cookie/session
 
 ## KOA2+Mockjs 实例
+[koa-mock](https://github.com/frontYang/koa-mockjs)
